@@ -42,4 +42,5 @@ jobs:
         uses: dorny/test-reporter@v1.5.0
         with:
           name: Check MATLAB test results from JUnit report
+          path: results.xml
           reporter: java-junit
