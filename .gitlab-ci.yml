@@ -1,0 +1,9 @@
+test:
+    tags:
+        - matlab_win64
+    script:
+        - mw -using BR2020bd matlab -batch "openProject(pwd); runRegtests;"
+    artifacts:
+        when: always
+        reports:
+            junit: results.xml
