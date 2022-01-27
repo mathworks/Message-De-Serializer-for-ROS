@@ -37,3 +37,6 @@ jobs:
         with:
           # Script, function, or statement to execute
           command: openProject(pwd); runRegtests;
+          
+      - name: Test Reporter
+        uses: dorny/test-reporter@v1.5.0
