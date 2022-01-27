@@ -40,3 +40,6 @@ jobs:
           
       - name: Test Reporter
         uses: dorny/test-reporter@v1.5.0
+        with:
+          name: Check MATLAB test results from JUnit report
+          reporter: java-junit
