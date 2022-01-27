@@ -11,5 +11,3 @@ runner = TestRunner.withTextOutput('OutputDetail', Verbosity.Detailed);
 runner.addPlugin(XMLPlugin.producingJUnitFormat(fullfile(projObj.RootFolder,'results.xml')));
 
 results = runner.run(suite);
-
-disp(results.assertSuccess);
