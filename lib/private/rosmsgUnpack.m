@@ -18,13 +18,13 @@ for ii = 1:numel(p)
         obj = msg(kk).(name);
 
         if isstruct(obj)
-            [msg.(name), jj] = inject_data(obj, inarr, jj);
+            [msg(kk).(name), jj] = inject_data(obj, inarr, jj);
         else
             leaf_len = typecast(inarr(jj:jj+8-1), 'double');
             jj = jj + 8;
-            c = class(msg.(name));
+            c = class(msg(kk).(name));
             temp = typecast(inarr(jj:jj+leaf_len(1)-1), c);
-            msg.(name) = temp(1:numel(msg.(name)));
+            msg(kk).(name) = temp(1:numel(msg(kk).(name)));
             jj = jj + leaf_len(1);
         end
     end
