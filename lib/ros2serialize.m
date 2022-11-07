@@ -1,4 +1,4 @@
-classdef ros2serialize < matlab.System & matlab.system.mixin.Propagates
+classdef ros2serialize < matlab.System
     %rosserialize Serialize a ROS2 message into a byte array
     %
     %   This system object serializes a ROS2 message into a byte array. This
