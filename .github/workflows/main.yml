@@ -41,7 +41,7 @@ jobs:
         if: always()
         with:
           name: code-issues
-          path: checkResults.json
+          path: work/checkResults.json
 
   test:
     # The type of runner that the job will run on
