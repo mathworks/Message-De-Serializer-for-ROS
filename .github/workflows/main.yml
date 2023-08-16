@@ -48,4 +48,4 @@ jobs:
           fail_on: "test failures"
           action_fail: true
           files: |
-            results.xml
+            work/results.xml
