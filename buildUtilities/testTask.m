@@ -1,4 +1,5 @@
-function runRegtests(tags)
+function results = testTask(tags)
+% Run unit tests
 
 arguments
     tags {mustBeText} = '';
@@ -15,6 +16,12 @@ projObj = currentProject;
 suite = TestSuite.fromProject(projObj);
 if ~isempty(tags)
     suite = suite.selectIf(HasTag(tags));
+else
+    disp('No tag was passed as input. All test cases will be executed.');
+end
+
+if isempty(suite)
+    warning('No tests were found with tag(s) "%s" and none will be executed.',strjoin(tags,', '));
 end
 
 runner = TestRunner.withTextOutput('OutputDetail', Verbosity.Detailed);
@@ -22,9 +29,9 @@ runner.addPlugin(XMLPlugin.producingJUnitFormat(fullfile(projObj.RootFolder,'res
 
 results = runner.run(suite);
 
-if ~ismember('github',tags)
-    % GitHub actions evaluate test success from Test Report
-    disp(results.assertSuccess);
+% CI workflows evaluate test success from Test Report
+if ~batchStartupOptionUsed
+    results.assertSuccess;
 end
 
 end

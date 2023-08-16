@@ -24,7 +24,7 @@ classdef ros2deserialize < matlab.System
     end
     
     methods
-        function obj = rosdeserialize(varargin)
+        function obj = rosdeserialize(obj, varargin)
             % Support name-value pair arguments when constructing the object.
             setProperties(obj, nargin, varargin{:});
         end
