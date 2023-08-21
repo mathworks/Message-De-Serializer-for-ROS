@@ -20,7 +20,7 @@ Requires MATLAB release R2020b or newer.
 3. Open any Simulink model example located in the `examples` folder and get familiar with different set-ups.
 
 ## Examples
-To learn how to use this in testing workflows, see [examples](examples).
+To learn how to use this in testing workflows, see the included examples.
 
 ## License
 The license is available in the [License file](license.txt) within this repository.
