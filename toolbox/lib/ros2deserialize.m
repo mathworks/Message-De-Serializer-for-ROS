@@ -18,7 +18,7 @@ classdef ros2deserialize < matlab.System
     % These are the options for the dropdown lists
     % The properties are constant, hidden, and transient based on the
     % system object documentation
-    properties (Constant, Hidden, Transient)
+    properties (Hidden, Transient)
         %MessageTypeSet - Dropdown choices for ROS2 message type
         MessageTypeSet = matlab.system.StringSet(ros2("msg","list"));
     end
